@@ -555,7 +555,7 @@ func TestNoError(t *testing.T) {
 	}()
 
 	if err == nil { // err is not nil here!
-		t.Errorf("Error should be nil due to empty interface", err)
+		t.Errorf("Error should be nil due to empty interface: %s", err)
 	}
 
 	False(t, NoError(mockT, err), "NoError should fail with empty error interface")
@@ -589,7 +589,7 @@ func TestError(t *testing.T) {
 	}()
 
 	if err == nil { // err is not nil here!
-		t.Errorf("Error should be nil due to empty interface", err)
+		t.Errorf("Error should be nil due to empty interface: %s", err)
 	}
 
 	True(t, Error(mockT, err), "Error should pass with empty error interface")
